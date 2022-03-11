@@ -12,14 +12,14 @@ public class TestDAO extends DAO{
     public TestDAO()
     {
         accountsList = new ArrayList<>();
-        Account account1 = new Account("test1", "pass1");
-        Account account2 = new Account("test2", "pass2");
-        Account account3 = new Account("test3", "pass3");
-        Account account4 = new Account("test4", "pass4");
-        Account admin1 = new Administrator("admin1", "pass1");
-        Account admin2 = new Administrator("admin2", "pass2");
-        Account admin3 = new Administrator("admin3", "pass3");
-        Account userToAdm = new Account("testAdmin", "passAdmin");
+        Account account1 = new Account("test1", "pass1", "testemail1@gmail.com");
+        Account account2 = new Account("test2", "pass2", "testemail2@gmail.com");
+        Account account3 = new Account("test3", "pass3", "testemail3@gmail.com");
+        Account account4 = new Account("test4", "pass4", "testemail4@gmail.com");
+        Account admin1 = new Administrator("admin1", "pass1", "testadmin1@gmail.com");
+        Account admin2 = new Administrator("admin2", "pass2", "testadmin2@gmail.com");
+        Account admin3 = new Administrator("admin3", "pass3", "testadmin3@gmail.com");
+        Account userToAdm = new Account("testAdmin", "passAdmin", "usertoadmin@gmail.com");
         Administrator newAdmin = new Administrator(userToAdm);
         accountsList.add(account1);
         accountsList.add(account2);
