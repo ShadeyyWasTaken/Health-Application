@@ -8,15 +8,11 @@ import model.Administrator;
 
 public abstract class DAO {
 
-    public abstract Account getAccount();
+    public abstract Account getAccount(String username);
 
     public abstract List<Account> getAllAccounts();
 
-    public String login(String username, String password) {
-        return "Not implemented";
-    }
+    public abstract String login(String username, String password);
 
-    public boolean register(String username, String password) {
-        return false;
-    }
+    public abstract boolean register(String username, String password);
 }

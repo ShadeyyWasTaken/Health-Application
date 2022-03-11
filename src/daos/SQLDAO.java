@@ -13,7 +13,8 @@ public class SQLDAO extends DAO{
     static private final String url = "jdbc:mysql://localhost:3307/accounts";
     static private Connection connection = null;
 
-    public SQLDAO() {
+    public SQLDAO()
+    {
         try {
             connection = DriverManager.getConnection(url, username, password);
             System.out.println("Connected to database");
@@ -21,7 +22,7 @@ public class SQLDAO extends DAO{
     }
 
     @Override
-    public Account getAccount()
+    public Account getAccount(String username)
     {
         return null;
     }

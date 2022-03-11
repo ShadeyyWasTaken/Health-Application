@@ -2,7 +2,6 @@ package app;
 
 import controller.Controller;
 
-import static javafx.application.Application.launch;
 
 public class Application {
     /**

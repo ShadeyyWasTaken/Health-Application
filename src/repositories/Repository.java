@@ -4,6 +4,8 @@ import daos.DAO;
 import daos.SQLDAO;
 
 import java.util.List;
+
+import daos.TestDAO;
 import model.Account;
 import model.Administrator;
 
@@ -12,12 +14,12 @@ public class Repository{
 
     public Repository()
     {
-        dao = new SQLDAO();
+        dao = new TestDAO();
     }
 
-    public Account getAccount()
+    public Account getAccount(String username)
     {
-        return dao.getAccount();
+        return dao.getAccount(username);
     }
 
     public List<Account> getAllAccounts()

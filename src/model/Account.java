@@ -1,8 +1,8 @@
 package model;
 
 public class Account {
-    protected String username;
-    protected String password;
+    private String username;
+    private String password;
     protected String userRole;
 
     public Account(String username, String password)
@@ -30,5 +30,15 @@ public class Account {
 
     public String getUserRole() {
         return userRole;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", userRole='" + userRole + '\'' +
+                '}';
     }
 }
