@@ -14,7 +14,7 @@ public class Repository{
 
     public Repository()
     {
-        dao = new TestDAO();
+        dao = new SQLDAO();
     }
 
     public Account getAccount(String username)
