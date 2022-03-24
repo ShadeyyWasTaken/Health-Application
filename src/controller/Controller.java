@@ -1,11 +1,14 @@
 package controller;
 
 import repositories.Repository;
+import model.Account;
+import model.Administrator;
 
 import java.util.Scanner;
 
 public class Controller {
     Repository repository;
+    Account account;
 
     public Controller()
     {
@@ -19,6 +22,7 @@ public class Controller {
         do {
             String username;
             String password;
+            String email;
             Scanner scanner = new Scanner(System.in);
             System.out.print("\nA. Get Account");
             System.out.print("\tB. Get All Accounts");
@@ -52,7 +56,9 @@ public class Controller {
                     username = scanner.next();
                     System.out.print("\nInput password:");
                     password = scanner.next();
-                    repository.register(username, password);
+                    System.out.print("\nInput email:");
+                    email = scanner.next();
+                    repository.register(username, password, email);
                     break;
                 case "D":
                     System.out.print("\nInput username:");
@@ -60,6 +66,7 @@ public class Controller {
                     System.out.print("\nInput password:");
                     password = scanner.next();
                     repository.login(username, password);
+                    System.out.println(account);
                     break;
                 case "Q":
                     finished = true;

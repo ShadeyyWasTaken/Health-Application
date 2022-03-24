@@ -56,13 +56,13 @@ public class TestDAO extends DAO{
     }
 
     @Override
-    public String login(String username, String password)
+    public Account login(String username, String password)
     {
-        return "Not implemented";
+        return null;
     }
 
     @Override
-    public boolean register(String username, String password)
+    public boolean register(String username, String password, String email)
     {
         return false;
     }

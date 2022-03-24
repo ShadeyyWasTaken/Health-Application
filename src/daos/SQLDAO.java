@@ -109,9 +109,28 @@ public class SQLDAO extends DAO{
         return false;
     }
 
-    public String login(String username, String password)
+    public Account login(String username, String password)
     {
-        return "Not implemented";
+        Account newAccount = getAccount(username);
+        if (newAccount == null)
+        {
+            System.out.println("No account found with that username!");
+            return null;
+        }
+        else
+        {
+            if (password.equals(newAccount.getPassword()))
+            {
+                System.out.println("Login successfull!");
+                return newAccount;
+            }
+            else
+            {
+                System.out.println("Wrong password!");
+                return null;
+            }
+        }
+
     }
 
     public boolean register(String username, String password, String email)

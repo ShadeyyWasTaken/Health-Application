@@ -27,13 +27,13 @@ public class Repository{
         return dao.getAllAccounts();
     }
 
-    public String login(String username, String password)
+    public Account login(String username, String password)
     {
         return dao.login(username, password);
     }
 
-    public boolean register(String username, String password)
+    public boolean register(String username, String password, String email)
     {
-        return dao.register(username, password);
+        return dao.register(username, password, email);
     }
 }

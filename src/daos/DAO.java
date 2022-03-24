@@ -12,7 +12,7 @@ public abstract class DAO {
 
     public abstract List<Account> getAllAccounts();
 
-    public abstract String login(String username, String password);
+    public abstract Account login(String username, String password);
 
     public abstract boolean register(String username, String password, String email);
 }
