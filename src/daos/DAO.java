@@ -14,5 +14,5 @@ public abstract class DAO {
 
     public abstract String login(String username, String password);
 
-    public abstract boolean register(String username, String password);
+    public abstract boolean register(String username, String password, String email);
 }

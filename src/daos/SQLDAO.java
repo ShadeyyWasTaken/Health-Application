@@ -104,13 +104,38 @@ public class SQLDAO extends DAO{
         return accounts;
     }
 
+    public boolean makeAdministrator(String username)
+    {
+        return false;
+    }
+
     public String login(String username, String password)
     {
         return "Not implemented";
     }
 
-    public boolean register(String username, String password)
+    public boolean register(String username, String password, String email)
     {
-        return false;
+        if(getAccount(username) != null){
+            System.out.println("An account with that username exists!");
+            return false;
+        }
+        else {
+            String queryString = "CALL AddAccount('";
+            queryString += username + "', '";
+            queryString += password + "', '";
+            queryString += email + "')";
+
+            try
+            {
+                Statement statement = connection.createStatement();
+                statement.executeUpdate(queryString);
+            }
+            catch (SQLException ex)
+            {
+                System.out.println(ex.getMessage());
+            }
+        }
+        return true;
     }
 }
