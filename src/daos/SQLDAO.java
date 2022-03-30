@@ -106,7 +106,30 @@ public class SQLDAO extends DAO{
 
     public boolean makeAdministrator(String username)
     {
-        return false;
+        if (getAccount(username) == null)
+        {
+            System.out.println("No account found with that username!");
+            return false;
+        }
+        else
+        {
+            String queryString = "CALL MakeAdministrator('";
+            queryString += username + "')";
+
+            try
+            {
+                Statement statement = connection.createStatement();
+                statement.executeUpdate(queryString);
+            }
+            catch (SQLException ex)
+            {
+                System.out.println(ex.getMessage());
+                return false;
+            }
+
+            System.out.print("The account has been successfully made an administrator!");
+            return true;
+        }
     }
 
     public Account login(String username, String password)

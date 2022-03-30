@@ -4,6 +4,9 @@ import repositories.Repository;
 import model.Account;
 import model.Administrator;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import java.util.Scanner;
 
 public class Controller {
@@ -28,11 +31,12 @@ public class Controller {
             System.out.print("\tB. Get All Accounts");
             System.out.print("\tC. Register Account");
             System.out.print("\tD. Log In Account");
+            System.out.print("\tE. Make an Administrator");
             System.out.print("\tQ. Quit\n");
             String choice = scanner.next();
             switch (choice) {
                 case "A":
-                    System.out.print("\nInput username:");
+                    System.out.print("\nInput username: ");
                     username = scanner.next();
                     try{
                         System.out.println(repository.getAccount(username).toString());
@@ -52,21 +56,31 @@ public class Controller {
                     }
                     break;
                 case "C":
-                    System.out.print("\nInput username:");
+                    System.out.print("\nInput username: ");
                     username = scanner.next();
-                    System.out.print("\nInput password:");
+                    System.out.print("\nInput password: ");
                     password = scanner.next();
+                    while(!passwordChecker(password))
+                    {
+                        System.out.print("\nIncorrect password format! Input password: ");
+                        password = scanner.next();
+                    }
                     System.out.print("\nInput email:");
                     email = scanner.next();
                     repository.register(username, password, email);
                     break;
                 case "D":
-                    System.out.print("\nInput username:");
+                    System.out.print("\nInput username: ");
                     username = scanner.next();
-                    System.out.print("\nInput password:");
+                    System.out.print("\nInput password: ");
                     password = scanner.next();
-                    repository.login(username, password);
+                    account = repository.login(username, password);
                     System.out.println(account);
+                    break;
+                case "E":
+                    System.out.print("\nInput username: ");
+                    username = scanner.next();
+                    repository.makeAdministrator(username);
                     break;
                 case "Q":
                     finished = true;
@@ -75,5 +89,18 @@ public class Controller {
                     throw new IllegalStateException("Unexpected value: " + choice);
             }
         } while (!finished);
+    }
+
+    public boolean passwordChecker(String password)
+    {
+        // 1 Capital Letter
+        // 1 Small Letter
+        // 1 Special symbol
+        // At least 6 characters
+        // Maximum 16 characters
+
+        Pattern pattern = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[#$@!%&*?])[A-Za-z\\d#$@!%&*?]{6,16}$");
+        Matcher matcher = pattern.matcher(password);
+        return matcher.find();
     }
 }

@@ -27,6 +27,7 @@ public class Repository{
         return dao.getAllAccounts();
     }
 
+
     public Account login(String username, String password)
     {
         return dao.login(username, password);
@@ -35,5 +36,10 @@ public class Repository{
     public boolean register(String username, String password, String email)
     {
         return dao.register(username, password, email);
+    }
+
+    public boolean makeAdministrator(String username)
+    {
+        return dao.makeAdministrator(username);
     }
 }

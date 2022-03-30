@@ -67,4 +67,6 @@ public class TestDAO extends DAO{
         return false;
     }
 
+    public boolean makeAdministrator(String username) {return false;}
+
 }
