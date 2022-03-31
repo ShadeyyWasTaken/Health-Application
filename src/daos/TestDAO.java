@@ -62,7 +62,7 @@ public class TestDAO extends DAO{
     }
 
     @Override
-    public boolean register(String username, String password, String email)
+    public boolean register(String username, String password, String salt , String email)
     {
         return false;
     }

@@ -1,5 +1,6 @@
 package controller;
 
+import helpers.SecurityHelper;
 import repositories.Repository;
 import model.Account;
 import model.Administrator;
@@ -67,7 +68,9 @@ public class Controller {
                     }
                     System.out.print("\nInput email:");
                     email = scanner.next();
-                    repository.register(username, password, email);
+                    String salt = SecurityHelper.generateSaltValue(30);
+                    password = SecurityHelper.hashPassword(password, salt);
+                    repository.register(username, password, salt, email);
                     break;
                 case "D":
                     System.out.print("\nInput username: ");
@@ -96,6 +99,7 @@ public class Controller {
         // 1 Capital Letter
         // 1 Small Letter
         // 1 Special symbol
+        // 1 Digit
         // At least 6 characters
         // Maximum 16 characters
 

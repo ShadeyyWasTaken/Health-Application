@@ -1,5 +1,6 @@
 package daos;
 
+import helpers.SecurityHelper;
 import model.Account;
 import model.Administrator;
 import java.util.ArrayList;
@@ -69,7 +70,8 @@ public class SQLDAO extends DAO{
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(queryString);
 
-            while (resultSet.next()) {
+            while (resultSet.next())
+            {
                 String username = resultSet.getString("USERNAME");
                 String password = resultSet.getString("PASSWORD");
                 String email = resultSet.getString("EMAIL");
@@ -134,29 +136,63 @@ public class SQLDAO extends DAO{
 
     public Account login(String username, String password)
     {
-        Account newAccount = getAccount(username);
-        if (newAccount == null)
-        {
-            System.out.println("No account found with that username!");
-            return null;
-        }
-        else
-        {
-            if (password.equals(newAccount.getPassword()))
+        Account account = null;
+        String saltDB = null;
+
+        try {
+            String text = "\"" + username + "\"";
+            String queryString = "CALL GETACCOUNT(" + "\"" + username + "\"" + ")";
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(queryString);
+
+            if (resultSet.next())
             {
-                System.out.println("Login successfull!");
-                return newAccount;
+                String passwordDB = resultSet.getString("PASSWORD");
+                saltDB = resultSet.getString("SALT");
+                String emailDB = resultSet.getString("EMAIL");
+                String userRoleDB = resultSet.getString("USERROLE");
+
+                if(userRoleDB.equals("user")) {
+                    account = new Account(username, passwordDB, emailDB);
+                }
+                else if(userRoleDB.equals("administrator"))
+                {
+                    account = new Administrator(username, passwordDB, emailDB);
+                }
+                else{
+                    System.out.println("Error");
+                    return null;
+                }
             }
+        }
+        catch (SQLException ex)
+        {
+            System.out.println(ex.getMessage());
+        }
+
+
+
+        if (account != null)
+        {
+            if (account.getPassword().equalsIgnoreCase(SecurityHelper.hashPassword(password, saltDB)))
+            {
+                return account;
+            }
+
             else
             {
-                System.out.println("Wrong password!");
+                System.out.println("Incorrect username or password!");
                 return null;
             }
         }
-
+        else
+        {
+            System.out.println("Account does not exist");
+            return null;
+        }
     }
 
-    public boolean register(String username, String password, String email)
+    public boolean register(String username, String password, String salt, String email)
     {
         if(getAccount(username) != null){
             System.out.println("An account with that username exists!");
@@ -166,6 +202,7 @@ public class SQLDAO extends DAO{
             String queryString = "CALL AddAccount('";
             queryString += username + "', '";
             queryString += password + "', '";
+            queryString += salt + "', '";
             queryString += email + "')";
 
             try

@@ -33,9 +33,9 @@ public class Repository{
         return dao.login(username, password);
     }
 
-    public boolean register(String username, String password, String email)
+    public boolean register(String username, String password, String salt, String email)
     {
-        return dao.register(username, password, email);
+        return dao.register(username, password, salt, email);
     }
 
     public boolean makeAdministrator(String username)
