@@ -5,9 +5,8 @@ import daos.SQLDAO;
 
 import java.util.List;
 
-import daos.TestDAO;
 import model.Account;
-import model.Administrator;
+import model.AccountAttributes;
 
 public class Repository{
     private final DAO dao;
@@ -27,6 +26,12 @@ public class Repository{
         return dao.getAllAccounts();
     }
 
+    public List<AccountAttributes> getAccountAttributes(String username)
+    {
+        return dao.getAccountAttributes(username);
+    }
+
+    public AccountAttributes getAccountAttributesByDate(String username, String date) { return dao.getAccountAttributesByDate(username, date); }
 
     public Account login(String username, String password)
     {
@@ -36,6 +41,15 @@ public class Repository{
     public boolean register(String username, String password, String salt, String email)
     {
         return dao.register(username, password, salt, email);
+    }
+
+    public boolean addActivity(String username, String date)
+    {
+        return dao.addActivity(username, date);
+    }
+
+    public boolean changeAttribute(String username, String attribute, String value, String date){
+        return dao.changeAttribute(username, attribute, value, date);
     }
 
     public boolean makeAdministrator(String username)

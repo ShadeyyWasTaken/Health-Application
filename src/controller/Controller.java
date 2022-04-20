@@ -1,12 +1,11 @@
 package controller;
 
 import helpers.SecurityHelper;
+import helpers.ValidationHelper;
 import repositories.Repository;
 import model.Account;
 import model.Administrator;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import java.util.Scanner;
 
@@ -61,7 +60,7 @@ public class Controller {
                     username = scanner.next();
                     System.out.print("\nInput password: ");
                     password = scanner.next();
-                    while(!passwordChecker(password))
+                    while(!ValidationHelper.passwordChecker(password))
                     {
                         System.out.print("\nIncorrect password format! Input password: ");
                         password = scanner.next();
@@ -92,19 +91,5 @@ public class Controller {
                     throw new IllegalStateException("Unexpected value: " + choice);
             }
         } while (!finished);
-    }
-
-    public boolean passwordChecker(String password)
-    {
-        // 1 Capital Letter
-        // 1 Small Letter
-        // 1 Special symbol
-        // 1 Digit
-        // At least 6 characters
-        // Maximum 16 characters
-
-        Pattern pattern = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[#$@!%&*?])[A-Za-z\\d#$@!%&*?]{6,16}$");
-        Matcher matcher = pattern.matcher(password);
-        return matcher.find();
     }
 }
