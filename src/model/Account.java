@@ -55,7 +55,6 @@ public class Account {
         return userRole;
     }
 
-
     @Override
     public String toString() {
         return "Account{" +

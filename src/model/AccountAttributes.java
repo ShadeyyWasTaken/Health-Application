@@ -235,6 +235,15 @@ public class AccountAttributes {
         return formatter.format(todayDate);
     }
 
+    public String CSVFormat(){
+        return this.weight + "," + this.weightGoal + "," + this.age + "," + this.gender + "," + this.height
+                + "," + this.heartRate + "," + this.restingHeartRate + "," + this.bloodPressure + "," + this.bloodOxygen
+                + "," + this.respiratoryRate + "," + this.lungCapacity + "," + this.steps + "," + this.walkingDistance
+                + "," + this.walkingTime + "," + this.sleepTime + "," + this.sleepGoal + "," + this.waterIntake
+                + "," + this.waterGoal + "," + this.todayDate + "," + this.appointment + "," + this.mood
+                + "," + this.stressLevel;
+    }
+
     @Override
     public String toString() {
 

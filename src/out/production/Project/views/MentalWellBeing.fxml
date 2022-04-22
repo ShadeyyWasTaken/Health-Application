@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="900.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.MentalWellBeingController">
+   <children>
+      <Pane prefHeight="640.0" prefWidth="210.0" style="-fx-background-color: #FDEEA2;">
+         <children>
+            <Label layoutX="47.0" layoutY="25.0" text="  Mental &#10;Wellbeing&#10;">
+               <font>
+                  <Font name="Arial" size="28.0" />
+               </font>
+            </Label>
+            <Pane layoutX="11.0" layoutY="118.0" onMouseClicked="#handleSettings" prefHeight="59.0" prefWidth="188.0" style="-fx-background-color: #f0f0f0; -fx-background-radius: 30px;">
+               <children>
+                  <Pane layoutX="-1.0" layoutY="-1.0" prefHeight="59.0" prefWidth="63.0" style="-fx-background-radius: 30px; -fx-background-color: white;" />
+                  <ImageView fitHeight="52.0" fitWidth="49.0" layoutX="5.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Person.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="nameLabel" layoutX="85.0" layoutY="16.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="6.0" layoutY="200.0" onMouseClicked="#handleHealthOverview" prefHeight="46.0" prefWidth="188.0">
+               <children>
+                  <Text layoutX="30.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Health Overview">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane layoutX="6.0" layoutY="280.0" onMouseClicked="#handleHealthActivities" prefHeight="46.0" prefWidth="188.0">
+               <children>
+                  <Text layoutX="30.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Health Activities">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane layoutX="6.0" layoutY="360.0" prefHeight="46.0" prefWidth="188.0">
+               <children>
+                  <Text layoutX="30.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mental Wellbeing">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane layoutX="55.0" layoutY="405.0" onMouseClicked="#handleHotlines" prefHeight="20.0" prefWidth="124.0" style="-fx-background-radius: 30px;">
+               <children>
+                  <Label layoutX="10.0" layoutY="2.0" text="• Hotlines">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="55.0" layoutY="427.0" onMouseClicked="#handleWellness" prefHeight="20.0" prefWidth="124.0" style="-fx-background-radius: 30px;">
+               <children>
+                  <Label layoutX="10.0" layoutY="2.0" text="• Wellness">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="55.0" layoutY="449.0" onMouseClicked="#handleWellnessDiary" prefHeight="20.0" prefWidth="124.0" style="-fx-background-radius: 30px;">
+               <children>
+                  <Label layoutX="10.0" layoutY="2.0" text="• Wellness Diary">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children></Pane>
+      <ImageView fitHeight="135.0" fitWidth="188.0" layoutX="12.0" layoutY="480.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Logo.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="232.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="We believe that good mental health and wellbeing is the key to sucess in your life and achieving your health goals can only be attainable with a healthy mental state. Clicking on the Wellness tab you will find links to content providing breathing exercises, meditation techniques and advice on how you can tune into your emotions and find balance in your life" textAlignment="JUSTIFY" wrappingWidth="627.6917724609375">
+         <font>
+            <Font name="Arial" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="232.0" layoutY="278.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You can track your daily mood and stress levels and create a wellness diary to document and keep track of how you are feeling. Additionally we provide information and details of Hotlines you can get in contact with if you are struggling. All of which can be accessed through the Hotlines tab " textAlignment="JUSTIFY" wrappingWidth="627.6917724609375">
+         <font>
+            <Font name="Arial" size="20.0" />
+         </font>
+      </Text>
+      <Label layoutX="231.0" layoutY="30.0" text="Mental Wellbeing ">
+         <font>
+            <Font name="Arial Bold" size="34.0" />
+         </font>
+      </Label>
+      <Label layoutX="425.0" layoutY="385.0" text="How are you feeling today?">
+         <font>
+            <Font name="Arial Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="232.0" layoutY="419.0" text="Date:">
+         <font>
+            <Font name="Arial" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="todayDateField" layoutX="283.0" layoutY="419.0">
+         <font>
+            <Font name="Arial" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="232.0" layoutY="455.0" text="Mood:">
+         <font>
+            <Font name="Arial Bold" size="17.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="49.0" fitWidth="40.0" layoutX="234.0" layoutY="489.0" onMouseClicked="#handleHappyEmoji" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@HappyEmoji.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="49.0" fitWidth="40.0" layoutX="304.0" layoutY="489.0" onMouseClicked="#handleGoodEmoji" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@GoodEmoji.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="49.0" fitWidth="40.0" layoutX="374.0" layoutY="489.0" onMouseClicked="#handleNeutralEmoji" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@NeutralEmoji.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="49.0" fitWidth="40.0" layoutX="444.0" layoutY="489.0" onMouseClicked="#handleStressedEmoji" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@StressedEmoji.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="49.0" fitWidth="40.0" layoutX="514.0" layoutY="489.0" onMouseClicked="#handleSadEmoji" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@SadEmoji.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="232.0" layoutY="545.0" text="Stress Levels:">
+         <font>
+            <Font name="Arial Bold" size="17.0" />
+         </font>
+      </Label>
+      <Pane layoutX="232.0" layoutY="586.0" onMouseClicked="#handleCalmLevel" prefHeight="27.0" prefWidth="90.0" style="-fx-background-radius: 30px; -fx-background-color: #6CA94F;">
+         <children>
+            <Label layoutX="23.0" layoutY="3.0" text="Calm">
+               <font>
+                  <Font name="Arial Bold" size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="350.0" layoutY="586.0" prefHeight="27.0" prefWidth="90.0" style="-fx-background-radius: 30px; -fx-background-color: #F3FF6F;">
+         <children>
+            <Label layoutX="8.0" layoutY="3.0" onMouseClicked="#handleModerateLevel" text="Moderate">
+               <font>
+                  <Font name="Arial Bold" size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="468.0" layoutY="586.0" onMouseClicked="#handleStressedLevel" prefHeight="27.0" prefWidth="90.0" style="-fx-background-radius: 30px; -fx-background-color: #DF574E;">
+         <children>
+            <Label layoutX="9.0" layoutY="3.0" text="Stressed">
+               <font>
+                  <Font name="Arial Bold" size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

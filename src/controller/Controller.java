@@ -4,6 +4,7 @@ import app.HealthApp;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import repositories.Repository;
 import model.Account;
@@ -45,6 +46,117 @@ public class Controller {
 
     public String getToday() {
         return today;
+    }
+
+    public void changeAccountInfoForm(String attribute)
+    {
+
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(HealthApp.class.getResource("../views/DialogValue.fxml"));
+            AnchorPane page = loader.load();
+
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Change Details");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+
+            DialogValueController dialogValueController = loader.getController();
+            dialogValueController.setDialogStage(dialogStage);
+            dialogValueController.setMainController(this);
+            dialogValueController.setAttribute(attribute);
+
+            dialogStage.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void changeUserInfoForm()
+    {
+
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(HealthApp.class.getResource("../views/DialogValueChangeDetails.fxml"));
+            AnchorPane page = loader.load();
+
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Change Details");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+
+            DialogValueChangeDetailsController dialogValueChangeDetailsController = loader.getController();
+            dialogValueChangeDetailsController.setDialogStage(dialogStage);
+            dialogValueChangeDetailsController.setMainController(this);
+
+            dialogStage.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void settingsAdminForm()
+    {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(HealthApp.class
+                    .getResource("../views/SettingsAdmin.fxml"));
+            rootLayout = loader.load();
+            Scene scene = new Scene(rootLayout);
+            primaryStage.setScene(scene);
+
+            SettingsAdminController settingsAdminController = loader.getController();
+            settingsAdminController.setMainController(this);
+            settingsAdminController.setInformation();
+
+            primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void settingsUserForm()
+    {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(HealthApp.class
+                    .getResource("../views/SettingsUser.fxml"));
+            rootLayout = loader.load();
+            Scene scene = new Scene(rootLayout);
+            primaryStage.setScene(scene);
+
+            SettingsUserController settingsUserController = loader.getController();
+            settingsUserController.setMainController(this);
+            settingsUserController.setInformation();
+
+            primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void healthOverviewForm()
+    {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(HealthApp.class
+                    .getResource("../views/HealthOverview.fxml"));
+            rootLayout = loader.load();
+            Scene scene = new Scene(rootLayout);
+            primaryStage.setScene(scene);
+
+            HealthOverviewController healthOverviewController = loader.getController();
+            healthOverviewController.setMainController(this);
+            healthOverviewController.setInformation();
+
+            primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void initRootLayout() {

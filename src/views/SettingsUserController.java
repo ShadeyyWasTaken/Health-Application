@@ -3,11 +3,13 @@ package views;
 import controller.Controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 
-public class MainController {
+
+public class SettingsUserController {
     @FXML
     private Label nameLabel;
+    @FXML
+    private Label settingsNameLabel;
     private Controller mainController;
 
     @FXML
@@ -28,19 +30,26 @@ public class MainController {
         mainController.mentalWellBeingForm();
     }
 
-    @FXML
-    public void handleSettings()
-    {
-        if (mainController.getAccount().getUserRole().equals("administrator"))
-        {
-            mainController.settingsAdminForm();
-        }
 
-        else
-        {
-            mainController.settingsUserForm();
-        }
+    @FXML
+    public void handleUsername()
+    {
+        mainController.changeAccountInfoForm("username");
+        setInformation();
     }
+
+    @FXML
+    public void handleEmail()
+    {
+        mainController.changeAccountInfoForm("email");
+    }
+
+    @FXML
+    public void handleExit()
+    {
+        mainController.initRootLayout();
+    }
+
 
     public void setMainController(Controller mainController) {
         this.mainController = mainController;
@@ -48,5 +57,6 @@ public class MainController {
 
     public void setInformation() {
         nameLabel.setText(mainController.getAccount().getUsername());
+        settingsNameLabel.setText(mainController.getAccount().getUsername());
     }
 }

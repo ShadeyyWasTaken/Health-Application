@@ -59,12 +59,20 @@ public class MentalWellBeingWellnessDiaryController {
 
     @FXML
     public void handleSettings() {
+        if (mainController.getAccount().getUserRole().equals("administrator"))
+        {
+            mainController.settingsAdminForm();
+        }
 
+        else
+        {
+            mainController.settingsUserForm();
+        }
     }
 
     @FXML
     public void handleHealthOverview() {
-
+        mainController.healthOverviewForm();
     }
 
     @FXML
@@ -90,7 +98,7 @@ public class MentalWellBeingWellnessDiaryController {
     @FXML
     public void handleNextWeek()
     {
-        date = date.plusWeeks(1);;
+        date = date.plusWeeks(1);
         List<String> thisWeek = getWeek(date);
         weekHolder.setText(getWeekSpan(thisWeek));
         clearImages();
@@ -105,7 +113,6 @@ public class MentalWellBeingWellnessDiaryController {
         weekHolder.setText(getWeekSpan(previousWeek));
         clearImages();
         setImages(previousWeek);
-;
     }
 
     private List<String> getWeek(LocalDate day) {
@@ -211,7 +218,29 @@ public class MentalWellBeingWellnessDiaryController {
                     }
                     }
                 catch (Exception exception) {
-                    exception.printStackTrace();
+                    switch (i) {
+                        case 0:
+                            moodMon.setImage(new Image("views/Cross.png"));
+                            break;
+                        case 1:
+                            moodTue.setImage(new Image("views/Cross.png"));
+                            break;
+                        case 2:
+                            moodWed.setImage(new Image("views/Cross.png"));
+                            break;
+                        case 3:
+                            moodThur.setImage(new Image("views/Cross.png"));
+                            break;
+                        case 4:
+                            moodFri.setImage(new Image("views/Cross.png"));
+                            break;
+                        case 5:
+                            moodSat.setImage(new Image("views/Cross.png"));
+                            break;
+                        case 6:
+                            moodSun.setImage(new Image("views/Cross.png"));
+                            break;
+                    }
                 }
             }
             }
@@ -232,7 +261,7 @@ public class MentalWellBeingWellnessDiaryController {
             moodTue.setImage(new Image("views/Blank.png"));
             moodWed.setImage(new Image("views/Blank.png"));
             moodThur.setImage(new Image("views/Blank.png"));
-            moodFri.setImage(new Image("views/Blank.png"));;
+            moodFri.setImage(new Image("views/Blank.png"));
             moodSat.setImage(new Image("views/Blank.png"));
             moodSun.setImage(new Image("views/Blank.png"));
             stressLevelMon.setImage(new Image("views/Blank.png"));

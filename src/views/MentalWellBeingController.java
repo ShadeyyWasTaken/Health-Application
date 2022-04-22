@@ -16,7 +16,7 @@ public class MentalWellBeingController {
     @FXML
     public void handleHealthOverview()
     {
-        mainController.initRootLayout();
+        mainController.healthOverviewForm();
     }
 
     @FXML
@@ -28,7 +28,15 @@ public class MentalWellBeingController {
     @FXML
     public void handleSettings()
     {
+        if (mainController.getAccount().getUserRole().equals("administrator"))
+        {
+            mainController.settingsAdminForm();
+        }
 
+        else
+        {
+            mainController.settingsUserForm();
+        }
     }
 
     @FXML

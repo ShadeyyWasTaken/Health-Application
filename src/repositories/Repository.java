@@ -59,4 +59,9 @@ public class Repository{
     {
         return dao.makeAdministrator(username);
     }
+
+    public boolean changeUserInfo(String username, String attribute, String value)
+    {
+        return dao.changeUserInfo(username, attribute, value);
+    }
 }

@@ -392,4 +392,54 @@ public class SQLDAO extends DAO{
             }
             return true;
         }
+
+    public boolean changeUserInfo(String username, String attribute, String value)
+    {
+        if(getAccount(username) == null)
+        {
+            System.out.println("An account with that username does not exist!");
+            return false;
+        }
+
+        else {
+
+            if (attribute.equalsIgnoreCase("password"))
+            {
+                String saltDB = null;
+
+                try {
+                    String text = "\"" + username + "\"";
+                    String queryString = "CALL GETACCOUNT(" + "\"" + username + "\"" + ")";
+                    Statement statement = connection.createStatement();
+                    ResultSet resultSet = statement.executeQuery(queryString);
+
+                    if (resultSet.next())
+                    {
+                        saltDB = resultSet.getString("SALT");
+                    }
+                }
+                catch (SQLException ex)
+                {
+                    System.out.println(ex.getMessage());
+                }
+
+                attribute = SecurityHelper.hashPassword(password, saltDB);
+            }
+
+            String queryString = "CALL ChangeUserInfo('";
+            queryString += username + "', '";
+            queryString += attribute + "', '";
+            queryString += value + "')";
+            try
+            {
+                Statement statement = connection.createStatement();
+                statement.executeUpdate(queryString);
+            }
+            catch (SQLException ex)
+            {
+                System.out.println(ex.getMessage());
+            }
+        }
+        return true;
+    }
     }

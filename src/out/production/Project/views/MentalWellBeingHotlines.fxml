@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="900.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.MentalWellBeingHotlinesController">
+   <children>
+      <Pane prefHeight="640.0" prefWidth="210.0" style="-fx-background-color: #FDEEA2;">
+         <children>
+            <Label layoutX="54.0" layoutY="25.0" text=" Mental &#10;Hotlines&#10;">
+               <font>
+                  <Font name="Arial" size="28.0" />
+               </font>
+            </Label>
+            <Pane layoutX="11.0" layoutY="118.0" onMouseClicked="#handleSettings" prefHeight="59.0" prefWidth="188.0" style="-fx-background-color: #f0f0f0; -fx-background-radius: 30px;">
+               <children>
+                  <Pane layoutX="-1.0" layoutY="-1.0" prefHeight="59.0" prefWidth="63.0" style="-fx-background-radius: 30px; -fx-background-color: white;" />
+                  <ImageView fitHeight="52.0" fitWidth="49.0" layoutX="5.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Person.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="nameLabel" layoutX="85.0" layoutY="16.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="6.0" layoutY="200.0" onMouseClicked="#handleHealthOverview" prefHeight="46.0" prefWidth="188.0">
+               <children>
+                  <Text layoutX="30.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Health Overview">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane layoutX="6.0" layoutY="280.0" onMouseClicked="#handleHealthActivities" prefHeight="46.0" prefWidth="188.0">
+               <children>
+                  <Text layoutX="30.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Health Activities">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane layoutX="6.0" layoutY="360.0" onMouseClicked="#handleMentalWellBeing" prefHeight="46.0" prefWidth="188.0">
+               <children>
+                  <Text layoutX="30.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mental Wellbeing">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane layoutX="55.0" layoutY="405.0" prefHeight="20.0" prefWidth="124.0" style="-fx-background-radius: 30px;">
+               <children>
+                  <Label layoutX="10.0" layoutY="2.0" text="• Hotlines">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="55.0" layoutY="427.0" onMouseClicked="#handleWellness" prefHeight="20.0" prefWidth="124.0" style="-fx-background-radius: 30px;">
+               <children>
+                  <Label layoutX="10.0" layoutY="2.0" text="• Wellness">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="55.0" layoutY="449.0" onMouseClicked="#handleWellnessDiary" prefHeight="20.0" prefWidth="124.0" style="-fx-background-radius: 30px;">
+               <children>
+                  <Label layoutX="10.0" layoutY="2.0" text="• Wellness Diary">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children></Pane>
+      <ImageView fitHeight="135.0" fitWidth="188.0" layoutX="12.0" layoutY="480.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Logo.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="232.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="                   to talk about anything that is upsetting you, you can contact Samaritans 24 hours a day, 365 days a year. You can call 116 123 (free from any phone), email jo@samaritans.org or visit some branches in person." textAlignment="JUSTIFY" wrappingWidth="627.6917724609375">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font>
+      </Text>
+      <Label layoutX="231.0" layoutY="30.0" text="Mental Health Hotlines">
+         <font>
+            <Font name="Arial Bold" size="34.0" />
+         </font>
+      </Label>
+      <Text layoutX="232.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="                 - you're experiencing a mental health problem or supporting someone else, you can call SANEline on 0300 304 7000 (4.30pm–10.30pm every day)." textAlignment="JUSTIFY" wrappingWidth="627.6917724609375">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="232.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="                                                                      offers a supportive listening service to anyone with thoughts of suicide. You can call the National Suicide Prevention Helpline UK on 0800 689 5652 (open 24/7)." textAlignment="JUSTIFY" wrappingWidth="627.6917724609375">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="231.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" text="                                                                                           - you can call the CALM on 0800 58 58 58 (5pm–midnight every day) if you are struggling and need to talk. Or if you prefer not to speak on the phone, you could try the CALM webchat service." textAlignment="JUSTIFY" wrappingWidth="627.6917724609375">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="232.0" layoutY="372.0" strokeType="OUTSIDE" strokeWidth="0.0" text="              - you're under 25, you can call The Mix on 0808 808 4994 (3pm–midnight every day), request support by email using this form on The Mix website or use their crisis text messenger service." textAlignment="JUSTIFY" wrappingWidth="627.6917724609375">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="232.0" layoutY="443.0" strokeType="OUTSIDE" strokeWidth="0.0" text="                                  - you're under 35 and struggling with suicidal feelings, or concerned about a young person who might be struggling, you can call Papyrus HOPELINEUK on 0800 068 4141 (weekdays 10am-10pm, weekends 2pm-10pm and bank holidays 2pm–10pm), email pat@papyrus-uk.org or text 07786 209 697." textAlignment="JUSTIFY" wrappingWidth="627.6917724609375">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="233.0" layoutY="585.0" strokeType="OUTSIDE" strokeWidth="0.0" text="                      - you identify as gay, lesbian, bisexual or transgender, you can call Switchboard on 0300 330 0630 (10am–10pm every day), email chris@switchboard.lgbt or use their webchat service. Phone operators all identify as LGBT+." textAlignment="JUSTIFY" wrappingWidth="627.6917724609375">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="232.0" layoutY="527.0" strokeType="OUTSIDE" strokeWidth="0.0" text="               - you're a student, you can look on the Nightline website to see if your university or college offers a night-time listening service. Nightline phone operators are all students too." textAlignment="JUSTIFY" wrappingWidth="627.6917724609375">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font>
+      </Text>
+      <Label layoutX="232.0" layoutY="571.0" prefHeight="18.0" prefWidth="128.0" text="Switchboard">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="232.0" layoutY="513.0" prefWidth="102.0" text="Nightline">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="231.0" layoutY="430.0" prefHeight="18.0" prefWidth="188.0" text="Papyrus HOPELINEUK">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="231.0" layoutY="358.0" prefHeight="18.0" prefWidth="188.0" text="The Mix">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="233.0" layoutY="289.0" prefHeight="18.0" prefWidth="390.0" text="Campaign Against Living Miserably (for short CALM)">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="231.0" layoutY="222.0" prefHeight="18.0" prefWidth="295.0" text="National Suicide Prevention Helpline UK">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="231.0" layoutY="166.0" prefHeight="18.0" prefWidth="188.0" text="SANEline">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="231.0" layoutY="95.0" prefHeight="18.0" prefWidth="188.0" text="Samaritans">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

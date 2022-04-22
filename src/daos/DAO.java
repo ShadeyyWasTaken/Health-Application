@@ -26,4 +26,6 @@ public abstract class DAO {
     public abstract boolean addActivity(String username, String date);
 
     public abstract boolean changeAttribute(String username, String attribute, String value, String date);
+
+    public abstract boolean changeUserInfo(String username, String attribute, String value);
 }
