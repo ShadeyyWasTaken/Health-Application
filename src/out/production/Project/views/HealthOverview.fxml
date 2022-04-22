@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="900.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.HealthOverviewController">
+   <children>
+      <Pane prefHeight="640.0" prefWidth="210.0" style="-fx-background-color: #FDEEA2;">
+         <children>
+            <Label layoutX="47.0" layoutY="25.0" text="  Health &#10;Overview">
+               <font>
+                  <Font name="Arial" size="28.0" />
+               </font>
+            </Label>
+            <Pane layoutX="11.0" layoutY="118.0" onMouseClicked="#handleSettings" prefHeight="59.0" prefWidth="188.0" style="-fx-background-color: #f0f0f0; -fx-background-radius: 30px;">
+               <children>
+                  <Pane layoutX="-1.0" layoutY="-1.0" prefHeight="59.0" prefWidth="63.0" style="-fx-background-radius: 30px; -fx-background-color: white;" />
+                  <ImageView fitHeight="52.0" fitWidth="49.0" layoutX="5.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Person.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="nameLabel" layoutX="85.0" layoutY="16.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="6.0" layoutY="200.0" prefHeight="46.0" prefWidth="188.0">
+               <children>
+                  <Text layoutX="30.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Health Overview">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane layoutX="6.0" layoutY="280.0" onMouseClicked="#handleHealthActivities" prefHeight="46.0" prefWidth="188.0">
+               <children>
+                  <Text layoutX="30.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Health Activities">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane layoutX="6.0" layoutY="360.0" onMouseClicked="#handleMentalWellbeing" prefHeight="46.0" prefWidth="188.0">
+               <children>
+                  <Text layoutX="30.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mental Wellbeing">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+         </children></Pane>
+      <ImageView fitHeight="135.0" fitWidth="188.0" layoutX="12.0" layoutY="480.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Logo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="231.0" layoutY="30.0" text="Health Overview">
+         <font>
+            <Font name="Arial Bold" size="34.0" />
+         </font>
+      </Label>
+      <Text layoutX="231.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your BMI Score is " textAlignment="JUSTIFY" wrappingWidth="627.6917724609375">
+         <font>
+            <Font name="Arial" size="20.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="293.0" fitWidth="398.0" layoutX="214.0" layoutY="167.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@BMI.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="646.0" layoutY="44.0" text="Heart Health">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Label>
+      <Text layoutX="646.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Resting Heart Rate :" textAlignment="JUSTIFY" wrappingWidth="627.6917724609375">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="646.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Heart Rate :" textAlignment="JUSTIFY" wrappingWidth="627.6917724609375">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="646.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Blood Pressure:" textAlignment="JUSTIFY" wrappingWidth="627.6917724609375">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </Text>
+      <Label fx:id="restingHeartRateLabel" layoutX="813.0" layoutY="108.0" text="65bmp">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="bloodPressureLabel" layoutX="778.0" layoutY="138.0" text="90 mm Hg">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="heartRateLabel" layoutX="748.0" layoutY="168.0" text="80bmp">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="646.0" layoutY="274.0" text="Water Log">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Label>
+      <Text layoutX="646.0" layoutY="354.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current:" textAlignment="JUSTIFY" wrappingWidth="627.6917724609375">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="646.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Goal:" textAlignment="JUSTIFY" wrappingWidth="627.6917724609375">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </Text>
+      <Label fx:id="currentWaterLabel" layoutX="716.0" layoutY="338.0" text="0.5 L">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="waterGoalLabel" layoutX="692.0" layoutY="368.0" text="1.5 L">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="646.0" layoutY="467.0" text="Sleep Log">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Label>
+      <Text layoutX="646.0" layoutY="547.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Today:" textAlignment="JUSTIFY" wrappingWidth="627.6917724609375">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="646.0" layoutY="577.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Goal:" textAlignment="JUSTIFY" wrappingWidth="627.6917724609375">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </Text>
+      <Label fx:id="todaySleepLabel" layoutX="705.0" layoutY="531.0" text="8 Hours">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="goalSleepLabel" layoutX="694.0" layoutY="560.0" text="9 Hours">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="231.0" layoutY="467.0" text="Create Report">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Label>
+      <Pane layoutX="231.0" layoutY="531.0" onMouseClicked="#handleExport" prefHeight="39.0" prefWidth="142.0" style="-fx-background-radius: 30px; -fx-background-color: #FDEEA2;">
+         <children>
+            <Label layoutX="17.0" layoutY="10.0" text="Export to CSV">
+               <font>
+                  <Font name="Arial Bold" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label fx:id="bmiLabel" layoutX="402.0" layoutY="106.0" text="23">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

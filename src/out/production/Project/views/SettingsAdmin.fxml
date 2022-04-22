@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="900.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.SettingsAdminController">
+   <children>
+      <Pane prefHeight="640.0" prefWidth="210.0" style="-fx-background-color: #FDEEA2;">
+         <children>
+            <Label layoutX="54.0" layoutY="36.0" text="Settings">
+               <font>
+                  <Font name="Arial" size="28.0" />
+               </font>
+            </Label>
+            <Pane layoutX="11.0" layoutY="118.0" prefHeight="59.0" prefWidth="188.0" style="-fx-background-color: #f0f0f0; -fx-background-radius: 30px;">
+               <children>
+                  <Pane layoutX="-1.0" layoutY="-1.0" prefHeight="59.0" prefWidth="63.0" style="-fx-background-radius: 30px; -fx-background-color: white;" />
+                  <ImageView fitHeight="52.0" fitWidth="49.0" layoutX="5.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Person.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="nameLabel" layoutX="85.0" layoutY="16.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="6.0" layoutY="200.0" onMouseClicked="#handleHealthOverview" prefHeight="46.0" prefWidth="188.0">
+               <children>
+                  <Text layoutX="30.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Health Overview">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane layoutX="6.0" layoutY="280.0" onMouseClicked="#handleHealthActivities" prefHeight="46.0" prefWidth="188.0">
+               <children>
+                  <Text layoutX="30.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Health Activities">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane layoutX="6.0" layoutY="360.0" onMouseClicked="#handleMentalWellbeing" prefHeight="46.0" prefWidth="188.0">
+               <children>
+                  <Text layoutX="30.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mental Wellbeing">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+         </children></Pane>
+      <ImageView fitHeight="135.0" fitWidth="188.0" layoutX="12.0" layoutY="480.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Logo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="124.0" fitWidth="128.0" layoutX="483.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Person.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="462.0" layoutY="177.0" onMouseClicked="#handleUsername" prefHeight="46.0" prefWidth="166.0" style="-fx-background-radius: 30px; -fx-background-color: #FDEEA2;">
+         <children>
+            <Label fx:id="settingsNameLabel" layoutX="44.0" layoutY="12.0">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="462.0" layoutY="253.0" onMouseClicked="#handleEmail" prefHeight="46.0" prefWidth="166.0" style="-fx-background-radius: 30px; -fx-background-color: #FDEEA2;">
+         <children>
+            <Label layoutX="56.0" layoutY="12.0" text="Email">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="462.0" layoutY="329.0" onMouseClicked="#handleAdmin" prefHeight="46.0" prefWidth="166.0" style="-fx-background-radius: 30px; -fx-background-color: #FDEEA2;">
+         <children>
+            <Label layoutX="24.0" layoutY="12.0" text="Make Admin">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="462.0" layoutY="405.0" prefHeight="46.0" prefWidth="166.0" style="-fx-background-radius: 30px; -fx-background-color: #FDEEA2;">
+         <children>
+            <Label layoutX="14.0" layoutY="12.0" onMouseClicked="#handleDetails" text="Change details">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="432.0" layoutY="496.0" onMouseClicked="#handleExit" prefHeight="59.0" prefWidth="225.0" style="-fx-background-color: #FDEEA2;">
+         <children>
+            <Label layoutX="45.0" layoutY="10.0" text="Sign out">
+               <font>
+                  <Font name="Arial Bold" size="34.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

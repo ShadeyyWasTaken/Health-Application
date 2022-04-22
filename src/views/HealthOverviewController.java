@@ -2,6 +2,7 @@ package views;
 
 import controller.Controller;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import model.AccountAttributes;
 
@@ -90,6 +91,11 @@ public class HealthOverviewController {
                 }
             }
             myWriter.close();
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Success");
+            alert.setHeaderText(null);
+            alert.setContentText("Successfully created report!");
+            alert.showAndWait();
         } catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
