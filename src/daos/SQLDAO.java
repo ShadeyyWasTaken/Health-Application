@@ -74,7 +74,6 @@ public class SQLDAO extends DAO{
     {
         String text = "\"" + username + "\"";
         String queryString = "CALL GETACCOUNTATTRIBUTESBYDATE(" + "\"" + username + "\"" + ", \"" + date + "\"" + ")";
-        System.out.println(queryString);
         try {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(queryString);
@@ -103,7 +102,7 @@ public class SQLDAO extends DAO{
                 LocalDate todayDate = LocalDate.parse(resultSet.getString("TODAY_DATE"), formatter);
                 boolean appointment = resultSet.getBoolean("APPOINTMENT");
                 String mood = resultSet.getString("MOOD");
-                int stressLevel = resultSet.getInt("STRESS_LEVEL");
+                String stressLevel = resultSet.getString("STRESS_LEVEL");
 
 
                 return new AccountAttributes(weight, weightGoal, age, gender, height, heartRate
@@ -149,7 +148,7 @@ public class SQLDAO extends DAO{
                 LocalDate todayDate = LocalDate.parse(resultSet.getString("TODAY_DATE"), formatter);
                 boolean appointment = resultSet.getBoolean("APPOINTMENT");
                 String mood = resultSet.getString("MOOD");
-                int stressLevel = resultSet.getInt("STRESS_LEVEL");
+                String stressLevel = resultSet.getString("STRESS_LEVEL");
 
 
                 AccountAttributes attributes = new AccountAttributes(weight, weightGoal, age, gender, height, heartRate
@@ -193,9 +192,6 @@ public class SQLDAO extends DAO{
                     System.out.println("Error not existing role");
                 }
 
-                //When we create the activities
-                //List<Account> reviewsCollection = getReviews(restaurantId);
-                //restaurant.setReviewsCollection(reviewsCollection);
 
                 if (account != null)
                 {
@@ -375,29 +371,25 @@ public class SQLDAO extends DAO{
 
         else {
             if(getAccountAttributesByDate(username, date) == null){
-                System.out.println("An activity for this date does not exist!");
-                return false;
-            }
-            else {
-                String queryString = "CALL ChangeAttribute('";
-                queryString += username + "', '";
-                queryString += attribute + "', '";
-                queryString += value + "', '";
-                queryString += date + "')";
+                addActivity(username, date);
 
-                try
-                {
-                    Statement statement = connection.createStatement();
-                    statement.executeUpdate(queryString);
-                }
-                catch (SQLException ex)
-                {
-                    System.out.println(ex.getMessage());
-                }
+            }
+
+            String queryString = "CALL ChangeAttribute('";
+            queryString += username + "', '";
+            queryString += attribute + "', '";
+            queryString += value + "', '";
+            queryString += date + "')";
+            try
+            {
+                Statement statement = connection.createStatement();
+                statement.executeUpdate(queryString);
+            }
+            catch (SQLException ex)
+            {
+                System.out.println(ex.getMessage());
+            }
             }
             return true;
         }
     }
-
-
-}

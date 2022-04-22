@@ -44,6 +44,64 @@ public class ValidationHelper {
         {
             return null;
         }
+    }
+    public static boolean ageChecker(String age)
+    {
+        try {
+            int value = Integer.parseInt(age);
+            if (value >= 18 && value <= 130)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
+        catch (Exception ex)
+        {
+            return false;
+        }
+    }
+
+    public static boolean weightChecker(String weight)
+    {
+        try {
+            int value = Integer.parseInt(weight);
+            if (value >= 30 && value <= 500)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        catch (Exception ex)
+        {
+            return false;
+        }
+    }
+
+    public static boolean heightChecker(String height)
+    {
+        try {
+            int value = Integer.parseInt(height);
+            if (value >= 100 && value <= 250)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        catch (Exception ex)
+        {
+            return false;
+        }
     }
 }

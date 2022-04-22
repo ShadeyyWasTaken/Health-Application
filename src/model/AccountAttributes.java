@@ -26,9 +26,9 @@ public class AccountAttributes {
     private LocalDate todayDate;
     private boolean appointment;
     private String mood;
-    private int stressLevel;
+    private String stressLevel;
 
-    public AccountAttributes(double weight, double weightGoal, int age, String gender, int height, int heartRate, int restingHeartRate, int bloodPressure, int bloodOxygen, int respiratoryRate, int lungCapacity, int steps, double walkingDistance, int walkingTime, int sleepTime, int sleepGoal, int waterIntake, int waterGoal, LocalDate todayDate, boolean appointment, String mood, int stressLevel) {
+    public AccountAttributes(double weight, double weightGoal, int age, String gender, int height, int heartRate, int restingHeartRate, int bloodPressure, int bloodOxygen, int respiratoryRate, int lungCapacity, int steps, double walkingDistance, int walkingTime, int sleepTime, int sleepGoal, int waterIntake, int waterGoal, LocalDate todayDate, boolean appointment, String mood, String stressLevel) {
         this.weight = weight;
         this.weightGoal = weightGoal;
         this.age = age;
@@ -137,7 +137,7 @@ public class AccountAttributes {
         this.mood = mood;
     }
 
-    public void setStressLevel(int stressLevel) {
+    public void setStressLevel(String stressLevel) {
         this.stressLevel = stressLevel;
     }
 
@@ -225,7 +225,7 @@ public class AccountAttributes {
         return mood;
     }
 
-    public int getStressLevel() {
+    public String getStressLevel() {
         return stressLevel;
     }
 

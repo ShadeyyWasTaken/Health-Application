@@ -5,6 +5,7 @@ import daos.SQLDAO;
 
 import java.util.List;
 
+import helpers.SecurityHelper;
 import model.Account;
 import model.AccountAttributes;
 
@@ -38,9 +39,11 @@ public class Repository{
         return dao.login(username, password);
     }
 
-    public boolean register(String username, String password, String salt, String email)
+    public boolean register(String username, String password, String email)
     {
-        return dao.register(username, password, salt, email);
+        String salt = SecurityHelper.generateSaltValue(30);
+        String hashedPassword = SecurityHelper.hashPassword(password, salt);
+        return dao.register(username, hashedPassword, salt, email);
     }
 
     public boolean addActivity(String username, String date)

@@ -10,10 +10,10 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="900.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="900.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.LoginController">
    <children>
-      <TextField layoutX="473.0" layoutY="229.0" prefHeight="33.0" prefWidth="300.0" style="-fx-background-color: #F0F0F0; -fx-border-style: solid; -fx-border-width: 0.3;" />
-      <Button layoutX="608.0" layoutY="466.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="165.0" style="-fx-font-weight: bold; -fx-border-style: solid; -fx-border-width: 0.3;" text="Register">
+      <TextField fx:id="usernameField" layoutX="473.0" layoutY="229.0" prefHeight="33.0" prefWidth="300.0" style="-fx-background-color: #F0F0F0; -fx-border-style: solid; -fx-border-width: 0.3;" />
+      <Button layoutX="608.0" layoutY="492.0" mnemonicParsing="false" onAction="#handleRegister" prefHeight="38.0" prefWidth="165.0" style="-fx-font-weight: bold; -fx-border-style: solid; -fx-border-width: 0.3;" text="Register">
          <font>
             <Font size="16.0" />
          </font></Button>
@@ -23,18 +23,18 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="327.0" layoutY="336.0" text="Password">
+      <Label layoutX="327.0" layoutY="347.0" text="Password">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <PasswordField layoutX="473.0" layoutY="328.0" prefHeight="33.0" prefWidth="300.0" style="-fx-background-color: #F0F0F0; -fx-border-style: solid; -fx-border-width: 0.3;" />
-      <Label layoutX="327.0" layoutY="90.0" style="-fx-font-weight: bold;" text="AllHealth">
+      <PasswordField fx:id="passwordField" layoutX="473.0" layoutY="339.0" prefHeight="33.0" prefWidth="300.0" style="-fx-background-color: #F0F0F0; -fx-border-style: solid; -fx-border-width: 0.3;" />
+      <Label layoutX="327.0" layoutY="80.0" style="-fx-font-weight: bold;" text="AllHealth">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Button layoutX="327.0" layoutY="466.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="165.0" style="-fx-font-weight: bold; -fx-border-style: solid; -fx-border-width: 0.3;" text="Login">
+      <Button layoutX="327.0" layoutY="492.0" mnemonicParsing="false" onAction="#handleLogin" prefHeight="38.0" prefWidth="165.0" style="-fx-font-weight: bold; -fx-border-style: solid; -fx-border-width: 0.3;" text="Login">
          <font>
             <Font size="16.0" />
          </font>

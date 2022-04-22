@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="900.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.RegisterOptionalController">
+   <children>
+      <Pane prefHeight="640.0" prefWidth="210.0" style="-fx-background-color: #FDEEA2;" />
+      <TextField fx:id="ageField" layoutX="473.0" layoutY="175.0" prefHeight="33.0" prefWidth="300.0" style="-fx-background-color: #F0F0F0; -fx-border-style: solid; -fx-border-width: 0.3;" />
+      <TextField fx:id="heightField" layoutX="473.0" layoutY="254.0" prefHeight="33.0" prefWidth="300.0" style="-fx-background-color: #F0F0F0; -fx-border-style: solid; -fx-border-width: 0.3;" />
+      <TextField fx:id="weightField" layoutX="473.0" layoutY="333.0" prefHeight="33.0" prefWidth="300.0" style="-fx-background-color: #F0F0F0; -fx-border-style: solid; -fx-border-width: 0.3;" />
+      <Button layoutX="327.0" layoutY="492.0" mnemonicParsing="false" onAction="#handleRegister" prefHeight="33.0" prefWidth="151.0" style="-fx-font-weight: bold; -fx-border-style: solid; -fx-border-width: 0.3;" text="Register">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Label layoutX="327.0" layoutY="183.0" text="Age">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="327.0" layoutY="262.0" text="Height">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="327.0" layoutY="341.0" text="Weight">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="327.0" layoutY="420.0" text="Gender">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="135.0" fitWidth="188.0" layoutX="12.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Logo.png" />
+         </image></ImageView>
+      <Label layoutX="327.0" layoutY="80.0" style="-fx-font-weight: bold;" text="Register Form (Optional)">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Button layoutX="622.0" layoutY="492.0" mnemonicParsing="false" onAction="#handleSkip" prefHeight="33.0" prefWidth="151.0" style="-fx-font-weight: bold; -fx-border-style: solid; -fx-border-width: 0.3;" text="Skip">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <ComboBox fx:id="genderField" layoutX="473.0" layoutY="412.0" prefHeight="33.0" prefWidth="300.0" />
+   </children>
+</AnchorPane>
